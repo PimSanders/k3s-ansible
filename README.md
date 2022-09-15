@@ -1,4 +1,4 @@
-# Build a Kubernetes cluster using k3s via Ansible
+# Build a Kubernetes cluster using k3s via Ansible, based on k3s-io/k3s-ansible
 
 Author: <https://github.com/itwars>
 
@@ -34,6 +34,9 @@ Second, edit `inventory/my-cluster/hosts.ini` to match the system information ga
 ```bash
 [master]
 192.16.35.12
+
+[controller]
+192.16.35.13
 
 [node]
 192.16.35.[10:11]
