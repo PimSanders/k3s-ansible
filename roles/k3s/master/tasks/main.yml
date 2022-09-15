@@ -39,6 +39,10 @@
   set_fact:
     token: "{{ node_token.content | b64decode | regex_replace('\n', '') }}"
 
+- name: Store Server token
+  set_fact:
+    servertoken: "{{ node_token.content | b64decode | regex_replace('\n', '') | regex_replace('.*server:', '') }}"
+
 - name: Restore node-token file access
   file:
     path: "{{ k3s_server_location }}/server/node-token"
